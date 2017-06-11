@@ -5,10 +5,10 @@
              android:background="#0099cc"
              tools:context="io.rolique.kung_fu_karaoke.screen.KaraokeActivity">
 
-    <com.google.android.exoplayer2.ui.SimpleExoPlayerView
-            android:id="@+id/player_view"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+    <!--<com.google.android.exoplayer2.ui.SimpleExoPlayerView-->
+            <!--android:id="@+id/player_view"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent"/>-->
 
     <fragment
             android:name="io.rolique.kung_fu_karaoke.screen.CameraFragment"

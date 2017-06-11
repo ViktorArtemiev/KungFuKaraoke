@@ -1,19 +1,11 @@
 package io.rolique.kung_fu_karaoke.screen
 
-import android.net.Uri
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
-import com.google.android.exoplayer2.ExoPlayerFactory
 import com.google.android.exoplayer2.SimpleExoPlayer
-import com.google.android.exoplayer2.extractor.DefaultExtractorsFactory
-import com.google.android.exoplayer2.source.ExtractorMediaSource
-import com.google.android.exoplayer2.trackselection.AdaptiveTrackSelection
-import com.google.android.exoplayer2.trackselection.DefaultTrackSelector
 import com.google.android.exoplayer2.ui.SimpleExoPlayerView
 import com.google.android.exoplayer2.upstream.BandwidthMeter
 import com.google.android.exoplayer2.upstream.DataSource
-import com.google.android.exoplayer2.upstream.DefaultBandwidthMeter
-import com.google.android.exoplayer2.upstream.DefaultDataSourceFactory
 import com.google.android.exoplayer2.util.Util
 import io.rolique.kung_fu_karaoke.R
 
@@ -35,11 +27,11 @@ class KaraokeActivity : AppCompatActivity() {
 
         setContentView(R.layout.activity_karaoke)
 
-        mBandWithMeter = DefaultBandwidthMeter()
-        mDataSourceFactory = DefaultDataSourceFactory(
-                this@KaraokeActivity, Util.getUserAgent(this@KaraokeActivity, getString(R.string.app_name)))
-
-        mSimpleExoPlayerView = findViewById(R.id.player_view) as SimpleExoPlayerView
+//        mBandWithMeter = DefaultBandwidthMeter()
+//        mDataSourceFactory = DefaultDataSourceFactory(
+//                this@KaraokeActivity, Util.getUserAgent(this@KaraokeActivity, getString(R.string.app_name)))
+//
+//        mSimpleExoPlayerView = findViewById(R.id.player_view) as SimpleExoPlayerView
 
     }
 
@@ -58,15 +50,15 @@ class KaraokeActivity : AppCompatActivity() {
     }
 
     fun initializePlayer() {
-        mSimpleExoPlayerView.requestFocus()
-        val videoTrackSelectionFactory = AdaptiveTrackSelection.Factory(mBandWithMeter)
-        mPlayer = ExoPlayerFactory.newSimpleInstance(this@KaraokeActivity, DefaultTrackSelector(videoTrackSelectionFactory))
-        mPlayer.playWhenReady = true
-        mSimpleExoPlayerView.player = mPlayer
-        val videoPath = "asset:///KungFuVideo.mp4"
-        val videoUri = Uri.parse(videoPath)
-        val mediaSource = ExtractorMediaSource(videoUri, mDataSourceFactory, DefaultExtractorsFactory(), null, null)
-        mPlayer.prepare(mediaSource)
+//        mSimpleExoPlayerView.requestFocus()
+//        val videoTrackSelectionFactory = AdaptiveTrackSelection.Factory(mBandWithMeter)
+//        mPlayer = ExoPlayerFactory.newSimpleInstance(this@KaraokeActivity, DefaultTrackSelector(videoTrackSelectionFactory))
+//        mPlayer.playWhenReady = true
+//        mSimpleExoPlayerView.player = mPlayer
+//        val videoPath = "asset:///KungFuVideo.mp4"
+//        val videoUri = Uri.parse(videoPath)
+//        val mediaSource = ExtractorMediaSource(videoUri, mDataSourceFactory, DefaultExtractorsFactory(), null, null)
+//        mPlayer.prepare(mediaSource)
     }
 
     override fun onPause() {
@@ -84,6 +76,6 @@ class KaraokeActivity : AppCompatActivity() {
     }
 
     fun releasePlayer() {
-        mPlayer.release()
+//        mPlayer.release()
     }
 }

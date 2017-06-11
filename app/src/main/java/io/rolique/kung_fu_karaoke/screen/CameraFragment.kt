@@ -64,7 +64,7 @@ class CameraFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View?, savedInstanceState: Bundle?) {
-        mSurfaceView = view as SurfaceView
+        mSurfaceView = view?.findViewById(R.id.surface_view) as SurfaceView
         mSurfaceHolder = mSurfaceView.holder
         mSurfaceHolder.addCallback(mSurfaceCallback)
         mCameraManager = activity.getSystemService(Context.CAMERA_SERVICE) as CameraManager
