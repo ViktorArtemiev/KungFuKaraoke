@@ -1,0 +1,22 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             xmlns:tools="http://schemas.android.com/tools"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:background="#0099cc"
+             tools:context="io.rolique.kung_fu_karaoke.screen.KaraokeActivity">
+
+    <com.google.android.exoplayer2.ui.SimpleExoPlayerView
+            android:id="@+id/player_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+    <fragment
+            android:name="io.rolique.kung_fu_karaoke.screen.CameraFragment"
+            android:id="@+id/fragment_camera"
+            android:layout_width="112dp"
+            android:layout_height="112dp"
+            android:layout_gravity="bottom"
+            android:layout_margin="16dp"
+            tools:background="#0099cc"/>
+
+</FrameLayout>
